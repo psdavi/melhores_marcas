@@ -1,0 +1,51 @@
+version: '3.0'
+services:
+  produtos:
+    image: marcas
+    build: ./dockerfiles/servicos/
+    hostname: produtos
+    container_name: produtos
+    command: python /servico/servico.py
+    volumes:
+      - ./produtos:/servico
+    ports:
+      - 5001:5000
+  comentarios:
+    image: marcas
+    build: ./dockerfiles/servicos/
+    hostname: comentarios
+    container_name: comentarios
+    command: python /servico/servico.py
+    volumes:
+      - ./comentarios:/servico
+    ports:
+      - 5002:5000
+  likes:
+    image: marcas
+    build: ./dockerfiles/servicos/
+    hostname: likes
+    container_name: likes
+    command: python /servico/servico.py
+    volumes:
+      - ./likes:/servico
+    ports:
+      - 5003:5000
+  bancodados:
+    image: mysql
+    hostname: bancodados
+    container_name: bancodados
+    ports:
+      - 5004:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+  arquivos:
+    image: arquivos
+    build: ./dockerfiles/arquivos
+    hostname: arquivos
+    container_name: arquivos
+    ports:
+      - 5005:80
+    volumes:
+      - ./imagens:/usr/share/nginx/html
+
+
