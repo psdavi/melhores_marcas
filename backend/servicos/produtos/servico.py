@@ -13,7 +13,7 @@ NOME_BANCO = "marcas"
 
 
 def get_conexao_db():
-    conexao = mysql.connect(host=MYSQL_SERVER, user=MYSQL_USER, password=MYSQL_PASS, database=MYSQL_BANCO)
+    conexao = mysql.connect(host=SERVIDOR_BANCO, user=USUARIO_BANCO, password=SENHA_BANCO, database=NOME_BANCO)
     return conexao
 
 @servico.get("/info")
