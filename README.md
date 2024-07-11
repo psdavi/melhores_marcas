@@ -19,7 +19,6 @@ samples, guidance on mobile development, and a full API reference.
 
 
 
-
 sudo docker-compose up -d
 sudo docker ps // lista os containers ativos
  sudo docker ps -a
@@ -53,3 +52,9 @@ mysql
 trocar a porta para a porta do docker 5004
 usuario do banco = root
 colocar a senha admin como no dockerfile
+
+Pesquisar EXPLAIN SELECT
+limiter = como era feita o select para listar por paginação no banco
+cursor = forma mais correta de fazer a paginação
+
+

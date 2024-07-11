@@ -1,0 +1,17 @@
+SELECT feeds.id as produto_id, DATE_FORMAT(feeds.data, '%Y-%m-%d %H:%i') as data, 
+empresas.id as empresa_id, empresas.nome as nome_empresa, empresas.avatar, produtos.nome as nome_produto, produtos.descricao, FORMAT(produtos.preco, 2) as preco, 
+produtos.url, produtos.imagem1, IFNULL(produtos.imagem2, '') as imagem2, IFNULL(produtos.imagem3, '') as imagem3 
+FROM feeds, produtos, empresas 
+WHERE produtos.id = feeds.produto 
+AND empresas.id = produtos.empresa 
+AND feeds.id > 1 ORDER BY produto_id ASC, data DESC 
+LIMIT 3
+
+SELECT feeds.id as produto_id, DATE_FORMAT(feeds.data, '%Y-%m-%d %H:%i') as data, 
+empresas.id as empresa_id, empresas.nome as nome_empresa, empresas.avatar, produtos.nome as nome_produto, produtos.descricao, FORMAT(produtos.preco, 2) as preco, 
+produtos.url, produtos.imagem1, IFNULL(produtos.imagem2, '') as imagem2, IFNULL(produtos.imagem3, '') as imagem3 
+FROM feeds, produtos, empresas 
+WHERE produtos.id = feeds.produto 
+AND empresas.id = produtos.empresa 
+AND feeds.id > 3 ORDER BY produto_id ASC, data DESC 
+LIMIT 3
